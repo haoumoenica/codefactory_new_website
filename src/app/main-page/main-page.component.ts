@@ -39,7 +39,7 @@ export class MainPageComponent implements AfterViewInit {
           }
         });
       }, {
-        threshold: 0.5 // Adjust as needed
+        threshold: 0.5
       });
 
       observer.observe(videoContainer);

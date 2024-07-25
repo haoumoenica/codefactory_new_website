@@ -62,3 +62,12 @@ h5 {
 .btn{
   font-weight: 600;
 }
+
+.carousel-inner img {
+  width: 20%;
+  height: auto;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: white;
+}
