@@ -78,7 +78,7 @@ export const courses: ICourses[] = [
     price: 3490,
     description: `Are you passionate about programming and design? Do you dream of becoming a Frontend Web Developer but struggle to find the time and the right format to learn while balancing other obligations like your job? Look no further! Our new part-time evening Frontend Developer course is the perfect solution for you!
         Our comprehensive curriculum covers everything from the basics of HTML, CSS, and JavaScript to more advanced topics such as responsive design and framework libraries. With our experienced instructors and hands-on approach, you'll start coding and building real-world projects from day one`,
-    dates: ['Start: Monday, 20th January 2025'],
+    dates: ['Start: Monday, 20th January 2025'], 
     advantages: [],
     keyfacts: [
       'Duration: 14 weeks',

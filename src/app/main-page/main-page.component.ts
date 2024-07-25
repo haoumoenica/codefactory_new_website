@@ -18,8 +18,8 @@ export class MainPageComponent implements AfterViewInit {
   constructor() {
     this.courses = courses;
     this.id = [21, 22, 23, 24, 25, 26, 27];
-
   }
+
   ngAfterViewInit(): void {
     let videoContainer = document.getElementById('hero-video') as HTMLIFrameElement;
 
@@ -45,7 +45,11 @@ export class MainPageComponent implements AfterViewInit {
       observer.observe(videoContainer);
     }
   }
+
+  scrollToTheme(themeId: number): void {
+    const element = document.getElementById(`theme-${themeId}`);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }
-
-
-

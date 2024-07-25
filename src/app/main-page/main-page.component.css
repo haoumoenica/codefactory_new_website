@@ -1,13 +1,15 @@
 .hero-img {
-    height: 100%; 
-    object-fit: cover; 
-    max-width: 100%;
-
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+    position: relative;
 }
 
 .typed-text {
     position: absolute;
-    top: 50%;
+    top: 50%; 
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -17,11 +19,27 @@
     width: 100%;
 }
 
+@media (max-width: 767px) {
+    .typed-text {
+        top: 40%;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .typed-text {
+        top: -10%; 
+        font-size: 1.5rem;
+    }
+}
+
 .card-container {
     display: flex;
     justify-content: center;
     margin-bottom: 1rem;
+    gap: 10px;
 }
+
 
 .hero-content{
     display: flex;
