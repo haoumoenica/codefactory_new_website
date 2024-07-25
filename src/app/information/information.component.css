@@ -1,0 +1,83 @@
+*{
+  margin-top: 2rem;
+}
+/* photos */
+.CodeCaftoryPhoto {
+  max-width: 800px;
+}
+/* technologies */
+.technology {
+  background-color: silver;
+}
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logoscard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logos img {
+  width: 100%;
+}
+/* feedbacks */
+.feedbackPhoto {
+  opacity: 25%;
+  height: 300px;
+}
+.feedback {
+  background-image: url("../../../public/images/brickhole.jpg");
+  background-size: 100% 100%;
+}
+@media only screen and (max-width: 800px) {
+  .feedbackPhoto {
+    height: 400px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .feedbackPhoto {
+    height: 400px;
+  }
+}
+.firebrick{
+  color: firebrick;
+}
+.container {
+  width: 100%;
+  overflow: hidden;
+}
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+}
+.my-carousel {
+  display: flex;
+  animation: scroll 20s linear infinite;
+}
+.carousel-logo {
+  width: 144px;
+  padding: 0 10px;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  text-align: center;
+  font-weight: bold;
+  font-size: 3rem;
+  color: firebrick;
+}

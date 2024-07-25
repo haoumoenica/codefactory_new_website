@@ -1,0 +1,117 @@
+*{
+  margin-top: 0.5rem;
+}
+
+.details-hero {
+  border: none;
+  position: relative;
+  height: 50vh;
+  max-height: 50vh;
+}
+
+.img-gradient {
+  height: inherit;
+}
+
+.hero-img {
+  height: 50vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  border-radius: 0;
+  filter: brightness(0.8);
+}
+
+.my-container {
+  top: -115px;
+  position: relative;
+  width: 80vw;
+  margin: 0 auto;
+  border-radius: 0;
+  border: none;
+  margin-bottom: -86px;
+}
+
+.my-course-header {
+  border-radius: 0;
+  border: none;
+  padding: 0.8rem 0;
+  margin-top: 0;
+}
+
+.my-course-header h1 {
+  margin-bottom: 0;
+}
+
+.row-container {
+  border: none;
+}
+
+.my-card {
+  border-radius: 0;
+}
+
+.my-card-inner {
+  border: none;
+}
+
+.inner-header {
+  text-align: start;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.inner-text {
+  padding: 2em;
+  padding-top: 0;
+  margin-bottom: 0;
+}
+
+.list-container {
+  padding: 2rem;
+  padding-top: 0;
+}
+
+.list-container ul {
+  margin-bottom: 0;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(23, 23, 23, 0.222);
+}
+
+.btn-container {
+  display: flex;
+}
+
+.apply,
+.info {
+  padding: 0.5rem 2.5rem;
+}
+
+.firebrick{
+  color: firebrick;
+}
+
+h1{
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.typed-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+  color: white;
+  text-shadow: 1px 1px 5px white;
+  font-size: 3rem;
+  width: 100%;
+}

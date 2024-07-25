@@ -1,0 +1,165 @@
+<div class="container new-course-contain">
+  <div class="centered">
+    <h3 class="news text-center firebrick">Upcoming courses</h3>
+
+    <div
+      class="row row-cols-1 row-cols-lg-2 row-cols-md-1 justify-content-around"
+    >
+      @for (course of courses; track course) {
+      <div class="hover d-flex justify-content-center">
+        <div class="card course-card justify-content-between p-2 mb-5">
+          <img [src]="course.image" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title firebrick">{{ course.cName }}</h5>
+          </div>
+          <ul class="list-group my-list-group list-group-flush">
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center"
+            >
+              <b>Duration:</b> {{ course.duration }}
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center"
+            >
+              <b>Level:</b> {{ course.level }}
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center"
+            >
+              <b>Price: </b>{{ course.price | currency : "EUR" }}
+            </li>
+          </ul>
+          <button
+            type="button"
+            [routerLink]="course.link"
+            class="btn btn-outline-dark mb-1"
+          >
+            More Info
+          </button>
+          @if(course.available) {
+          <button class="btn btn-success">Available</button>
+          } @else {
+          <button class="btn btn-danger">Fully Booked</button>
+          }
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>
+
+<div
+  class="container event-contain mb-2 p-2 text-center d-flex flex-column align-items-center justify-content-center gap-5"
+  style="width: 100%"
+>
+  <h3 class="news text-center firebrick">Upcoming events</h3>
+  @for(events of events; track events){
+  <div class="card" style="width: 80%">
+    <div class="card-body">
+      <h5 class="card-title firebrick">
+        <b>{{ events.eName }}</b>
+      </h5>
+      <p class="card-text">
+        <b>{{ events.date }}</b>
+      </p>
+      <p class="card-text">{{ events.info }}</p>
+
+      @if(events.available) {
+      <button class="btn btn-success">Available</button>
+      } @else {
+      <button class="btn btn-danger">Reserved</button>
+      }
+    </div>
+  </div>
+  }
+</div>
+
+<div class="container partner-contain mt-3">
+  <h3 class="news text-center firebrick">Our partners</h3>
+  <div
+    id="carouselExampleInterval"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner text-center">
+      <div class="carousel-item active" data-bs-interval="2000">
+        <img
+          src="/logos/microsoft-144.png"
+          class="d-block mx-auto"
+          alt="Microsoft Logo"
+        />
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="/logos/sap-144.png" class="d-block mx-auto" alt="SAP Logo" />
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="/logos/aws-144.png" class="d-block mx-auto" alt="AWS Logo" />
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleInterval"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleInterval"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+<!-- <div class="my-5 row row-cols-3">
+        @for(course of courses; track course){
+            <div class="p-2">
+                <div class="container"> 
+                <div class="card">
+                <img height="200px" width="300px" [src]="course.image"  class="card-img-top" alt="{{course.cName}}">
+                <div class="card-body  text-center">
+                <h5 class="card-title">{{course.cName}}</h5>
+                <p class="card-text">{{course.duration}}</p>
+                <p class="card-text">{{course.level}}</p>
+                <p class="card-text">{{course.price}}</p>
+                @if(course.available){
+                   
+                    <button class="btn btn-success">available</button>
+                }@else {<button class="btn btn-danger">reserved</button>}
+                
+
+                </div>
+            </div>
+        </div>
+    </div>
+    }  
+    </div> -->
+
+<!-- <div class="card">
+
+      
+        
+            <div class="card-header">
+                
+                
+                <div class="card-body text-center event-card">
+                <h5 class="card-title">{{events.eName}}</h5>
+                <p class="card-text">{{events.date}}</p>
+                <p class="card-text">{{events.info}}</p>
+                
+                @if(events.available){
+                   
+                    <button class="btn btn-success">available</button>
+                }@else {<button class="btn btn-danger">reserved</button>}
+                
+
+                </div>
+            </div>
+     
+    </div> -->

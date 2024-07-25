@@ -1,0 +1,184 @@
+<!-- photos of CodeFactory -->
+<div class="container mt-4 CodeCaftoryPhoto">
+  <div
+    id="carouselExampleInterval"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="2000">
+        <img
+          src="../images/fb1.jpg"
+          class="d-block w-100"
+          style="height: 500px"
+          alt="Photo"
+        />
+      </div>
+      @for (photo of photos; track $index;let i = $index) {
+      <div class="carousel-item" data-bs-interval="2000">
+        <img
+          src="{{ photo.photo }}"
+          class="d-block w-100"
+          style="height: 500px"
+          alt="Photo"
+        />
+      </div>
+      }
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleInterval"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleInterval"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<!-- teachers part  -->
+<div class="container justify-content-center">
+  <h1 class="text-center firebrick m-5">Our team</h1>
+  <div
+    class="row row-cols-1 row-cols-lg-4 row-cols-md-2 justify-content-center"
+  >
+    @for (teacher of teachers;track $index;let i = $index) {
+    <div class="d-flex justify-content-center">
+      <div class="card" style="width: 18rem">
+        <img
+          src="{{ teacher.image }}"
+          class="card-img-top"
+          style="height: 300px"
+          alt="Profile photo"
+        />
+        <div class="card-body">
+          <h5 class="card-title"><span class="firebrick"><b>{{ teacher.tname }}</b></span></h5>
+          <p class="card-text">{{ teacher.description }}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <b><span class="firebrick">Job title: </span></b>{{ teacher.jobTitle }}
+          </li>
+          <li class="list-group-item">
+            <b><span class="firebrick">Years of experience: </span></b>{{ teacher.years }}
+          </li>
+          <li class="list-group-item">
+            <b><span class="firebrick">Strong focused: </span></b>{{ teacher.focused }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    }
+  </div>
+
+  <!-- technologies -->
+
+  <div class="container mt-5">
+    <div>
+      <h1 class="partners-txt firebrick justify-content-center text-center">Used technologies</h1>
+      <br /><br />
+      <div class="carousel-container">
+        <div class="carousel my-carousel">
+          <img
+            draggable="false"
+            *ngFor="let logo of duplicatedLogos"
+            [src]="logo"
+            class="carousel-logo"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <div class="container justify-content-center technology">
+    <h1 class="text-center text-danger p-4">Used technologies</h1>
+    <div
+      class="row row-cols-2 row-cols-lg-5 row-cols-md-4 row-cols-sm-3 justify-content-center teachers"
+    >
+      @for (technology of technologies;track $index;let i = $index) {
+      <div class="mb-4 logos">
+        <div class="card logoscard" style="width: 18rem">
+          <img src="{{ technology.photo }}" alt="Profile photo" />
+          <div class="card-body">
+            <h5 class="card-title">{{ technology.lname }}</h5>
+          </div>
+        </div>
+      </div>
+
+      }
+    </div>
+    <hr />
+  </div> -->
+  <!-- Feedbacks -->
+  <h1 class="text-center firebrick m-5">Testimonials</h1>
+  <div
+    id="carouselExampleInterval1"
+    class="carousel slide m-3 feedback"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="8000">
+        <img
+          src="../images/Feedback-backgroung.jpg"
+          class="d-block w-100 feedbackPhoto"
+          alt="Photo"
+        />
+        <div class="carousel-caption text-dark m-0">
+          <h5>Mike Z.</h5>
+          <p>
+            I took the Full Stack course and can recommend it. You will get good
+            solid basic education in important front and back technologies. You
+            can also listen to lunchtime talks from the experts web developers.
+            Competent coaches, smart mentality and reasonable price.
+          </p>
+          <p>&#9733; &#9733; &#9733; &#9733; &#9733;</p>
+        </div>
+      </div>
+
+      @for (feedback of feeedbacks;track $index;let i = $index) {
+      <div class="carousel-item">
+        <img
+          src="../images/Feedback-backgroung.jpg"
+          class="d-block w-100 feedbackPhoto"
+          alt="..."
+        />
+        <div class="carousel-caption text-dark m-0">
+          <h5>{{ feedback.fname }}</h5>
+          <p>{{ feedback.description }}</p>
+          <p>&#9733; &#9733; &#9733; &#9733; &#9733;</p>
+        </div>
+      </div>
+      }
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleInterval1"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleInterval1"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<hr />

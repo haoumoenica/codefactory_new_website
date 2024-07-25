@@ -1,0 +1,219 @@
+<div>
+  <img class="hero-img" src="/images/backend2.png" alt=""/>
+    <div class="typed-text">
+      <ngx-typed-js
+        [strings]="['CodeFactory, where everyone can learn to code!']"
+        [shuffle]="true"
+        [typeSpeed]="40"
+      >
+        <span class="typing"></span>
+      </ngx-typed-js>
+    </div>
+</div>
+<div class="container">
+  <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1 row-cols-xs-1 justify-content-center">
+    <div class="hero-content">
+      <div class="hero-paragraph">
+        <h3 class="mb-2">CodeFactory, Get ahead of the job market!</h3>
+        <p>
+          Have you been considering for a while wether or not coding is for you?
+          We might be able to help out! CodeFactory is one of Austria's answers to
+          the IT professionals shortage, and we do it with passion, empathy and
+          fun!
+          <br />
+          At CodeFactory, we believe everyone can code! Whether you're a beginner,
+          a career changer, or an advanced programmer eager to learn new
+          technologies quickly, we've got you covered. At our bootcamp, you'll
+          dive into hands-on projects, tackle daily exercises, and build your own
+          portfolio to display your abilities.
+          <br />
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="display">
+    <div class="courses">
+      <div
+        class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-xs-1 justify-content-center"
+      >
+        @for (theme of themes; track theme) {
+        <a href="#theme-{{ theme.id }}" class="card-link">
+          <div class="card first-card hover" style="width: 20rem">
+            <img [src]="theme.image" class="card-img-top" alt="..." />
+            <div class="card-body"> 
+              <h5 class="card-title">{{ theme.name }}</h5>
+            </div>
+          </div>
+        </a>
+        }
+      </div>
+
+      <div class="between-content">
+        <h3 class="mb-2">Our courses</h3>
+        <p>
+          With a variety of courses at your disposal, we ensure that you are
+          well prepared for the job market. Our Alumni success in their careers
+          after the bootcamp is something we pride ourselves with, with 80% of
+          graduates finding a developer job within two months after graduating.
+          <br />
+          Our courses range from basic HTML/CSS and JavaScript, to get
+          introduced to coding, to intensive frontend, backend and fullstack
+          development. The frontend course includes TypeScript and Angular, the
+          backend focuses on PHP, Symfony and MySQL, and the fullstack contains
+          all of those technologies.
+          <br />
+          With the supportive help of our excellent trainers, learning how to
+          code has never been within your reach! You will also get the chance to
+          start new friendships and bond with a community you can call your own.
+          <br />
+          <span
+            >Join us at CodeFactory and discover that we mean it when we say
+            coding is for everybody!</span
+          >
+        </p>
+      </div>
+
+      <div class="mt-5 ">
+        @for (theme of themes; track theme) { @if (theme.courseQtty == 4) {
+
+        <div
+          class="card-container justify-content-center"
+          id="theme-{{ theme.id }}"
+        >
+          <div class="card p-2 mb-5" style="width: 30rem">
+            <img [src]="theme.image" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">{{ theme.name }}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                {{ theme.course1 }}
+                <button
+                  routerLink="/details/{{ id[3] }}"
+                  type="button"
+                  class="btn btn-more"
+                >
+                  More info
+                </button>
+              </li>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                {{ theme.course2
+                }}<button
+                  routerLink="/details/{{ id[1] }}"
+                  type="button"
+                  class="btn btn-more"
+                >
+                  More info
+                </button>
+              </li>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                {{ theme.course3
+                }}<button
+                  routerLink="/details/{{ id[5] }}"
+                  type="button"
+                  class="btn btn-more"
+                >
+                  More info
+                </button>
+              </li>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                {{ theme.course4
+                }}<button
+                  routerLink="/details/{{ id[6] }}"
+                  type="button"
+                  class="btn btn-more"
+                >
+                  More info
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        } @else if (theme.courseQtty == 2) {
+        <div
+          class="card-container justify-content-center"
+          id="theme-{{ theme.id }}"
+        >
+          <div class="card p-2 mb-5" style="width: 30rem">
+            <img [src]="theme.image" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">{{ theme.name }}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                {{ theme.course1
+                }}<button
+                  routerLink="/details/{{ id[2] }}"
+                  type="button"
+                  class="btn btn-more"
+                >
+                  More info
+                </button>
+              </li>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                {{ theme.course2
+                }}<button
+                  routerLink="/details/{{ id[0] }}"
+                  type="button"
+                  class="btn btn-more"
+                >
+                  More info
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        } @else if (theme.courseQtty == 1){
+        <div
+          class="card-container justify-content-center"
+          id="theme-{{ theme.id }}"
+        >
+          <div class="card p-2 mb-5" style="width: 30rem">
+            <img [src]="theme.image" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">{{ theme.name }}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                {{ theme.course1
+                }}<button
+                  routerLink="/details/{{ id[4] }}"
+                  type="button"
+                  class="btn btn-more"
+                >
+                  More info
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        } }
+      </div>
+    </div>
+    <div class="video-container">
+      <iframe
+        id="hero-video"
+        src="https://www.youtube.com/embed/LK3cLNexNFk?autoplay=0&loop=1&playlist=LK3cLNexNFk&start=4"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</div>

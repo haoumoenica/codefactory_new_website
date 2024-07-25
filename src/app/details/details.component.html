@@ -1,0 +1,182 @@
+@for (item of courses; track $index; let i = $index) { @if(id == item.id) {
+<div class="card details-hero mb-3">
+  <div class="img-gradient">
+    <img
+      src="images/details_hero.jpg"
+      class="card-img-top hero-img"
+      alt="..."
+    />
+    <div class="typed-text">
+      <ngx-typed-js
+        [strings]="[item.joke]"
+        [shuffle]="true"
+        [typeSpeed]="40"
+      >
+        <span class="typing"></span>
+      </ngx-typed-js>
+    </div>
+  </div>
+</div>
+
+<div class="card my-container">
+  <div class="card my-course-header mb-4">
+    <h1 class="display-6 text-center firebrick">{{ item.name }}</h1>
+  </div>
+
+  <div class="card row-container">
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-xl-1 g-0">
+      <div class="col">
+        <div class="card my-card-inner">
+          <h2 class="inner-header firebrick">Description</h2>
+          <p class="inner-text">
+            {{ item.description }}
+          </p>
+        </div>
+      </div>
+
+      @if(item.advantages.length > 0) {
+
+      <div class="col">
+        <div class="card my-card-inner advatages-card">
+          <h2 class="inner-header firebrick">
+            Your advantages as a CodeFactory Full Stack Web Developer graduate:
+          </h2>
+          <div class="list-container">
+            <ul class="advantages">
+              @for(advantage of item.advantages; track $index; let i = $index) {
+              <li>{{ advantage }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      } @if(item.dates.length > 0) {
+
+      <div class="col">
+        <div class="card my-card-inner advatages-card">
+          <h2 class="inner-header firebrick">Upcoming Courses:</h2>
+          <div class="list-container">
+            <ul class="advantages">
+              @for(date of item.dates; track $index; let i = $index) {
+              <li>{{ date }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      } @if(item.keyfacts.length > 0) {
+      <div class="col">
+        <div class="card my-card-inner key-facts-container">
+          <h2 class="inner-header firebrick">Course Details:</h2>
+          <div class="list-container">
+            <ul class="key-facts">
+              @for (keyfact of item.keyfacts; track $index) {
+              <li>{{ keyfact }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+      } @if(item.chapters.length > 0) {
+      <div class="col">
+        <div class="card my-card-inner key-facts-container">
+          <h2 class="inner-header firebrick">
+            What exactly do you learn in the {{ item.name }}?
+          </h2>
+          <div class="list-container">
+            <ul class="key-facts">
+              @for (chapter of item.chapters; track $index) {
+              <li>{{ chapter }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+      }
+
+      <div class="col">
+        <div class="card my-card-inner requirements">
+          <h2 class="inner-header firebrick">Requirements</h2>
+          <p class="inner-text">
+            {{ item.requirements }}
+          </p>
+        </div>
+      </div>
+
+      @if (item.chaptersFrontend.length > 0 || item.chaptersBackend.length > 0)
+      {
+      <div class="col">
+        <div class="card my-card-inner chapters">
+          <h2 class="inner-header firebrick">Course Chapters</h2>
+          <div class="list-container">
+            @if (item.chaptersFrontend.length > 0) {
+            <h4 class="fw-medium firebrick">Front-end</h4>
+            <ul class="mb-2 frontend-chapters">
+              @for(frontend of item.chaptersFrontend; track $index) {
+              <li>{{ frontend }}</li>
+              }
+            </ul>
+            } @if (item.chaptersBackend.length > 0) {
+            <h4 class="fw-medium firebrick">Back-end</h4>
+            <ul class="mb-2 backend-chapters">
+              @for(backend of item.chaptersBackend; track $index) {
+              <li>{{ backend }}</li>
+              }
+            </ul>
+            }
+          </div>
+        </div>
+      </div>
+
+      } @if (item.whysection.length > 0) {
+      <div class="col">
+        <div class="card my-card-inner why-section">
+          <h2 class="inner-header firebrick">
+            Why should I become a Full Stack Web Developer?
+          </h2>
+          <p class="inner-text">{{ item.whysection }}</p>
+        </div>
+      </div>
+      } @if (item.jobsection.length > 0) {
+
+      <div class="col">
+        <div class="card my-card-inner job-section">
+          <h2 class="inner-header firebrick">Job perspective</h2>
+          <p class="inner-text">
+            {{ item.jobsection }}
+          </p>
+        </div>
+      </div>
+
+      }
+    </div>
+  </div>
+
+  <div class="footer-container">
+    <p class="text-muted my-1 p-2">
+      Wir sind laut <b>Paragraph § 6 Abs 1 Z 11 lit a UStG</b> von der
+      Umsatzsteuer befreit.
+    </p>
+    <div class="btn-container">
+      <a
+        type="button"
+        [href]="item.infoUrl"
+        class="btn btn-outline-dark info fw-medium mx-1"
+        target="_blank"
+      >
+        READ MORE
+      </a>
+      <a
+        type="button"
+        [href]="item.applyUrl"
+        class="btn btn-outline-success apply fw-medium mx-1"
+        target="_blank"
+      >
+        APPLY
+      </a>
+    </div>
+  </div>
+</div>
+} }
